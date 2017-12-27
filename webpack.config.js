@@ -69,6 +69,11 @@ module.exports = {
             name: ["vendor"],
             minChunks: Infinity // 提取所有entry共同依赖的模块
         }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //   compress: {
+        //     warnings: false
+        //   }
+        // })
     ],
 
     watch: true
