@@ -26,7 +26,7 @@ module.exports = {
         rules: [{
             test: require.resolve('zepto'),   //将 zepto(amd) 格式转化为 commonjs 格式
             use: [
-              'exports-loader?window.Zepto',
+              'exports-loader?window.Zepto',  //将转化后的 zepto 变量应用到全局对象
               'script-loader'
             ]
         }, {
@@ -65,6 +65,10 @@ module.exports = {
 
     plugins: [
         new ET('main.css'),
+        // new webpack.ProvidePlugin({   //自动加载模块，需要在 index.html 中手动引入相应的文件
+        //   $: "zepto",
+        //   _: 'lodash'
+        // }),
         new webpack.optimize.CommonsChunkPlugin({   //公共模块单独打包成 vendor 文件
             name: ["vendor"],
             minChunks: Infinity // 提取所有entry共同依赖的模块

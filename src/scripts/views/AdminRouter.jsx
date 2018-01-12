@@ -6,6 +6,7 @@ import { Switch, Route, IndexRoute, IndexLink, Redirect, Link, withRouter } from
 //引入组件  --> 应该在 router 下引入
 import demo from './demo/router.js'
 import demo2 from './demo2/router.js'
+import map from './map/router.js'
 
 @withRouter // Link 跳转同步更新 view，设置路由一定要加
 @inject('store')
@@ -18,13 +19,18 @@ export default class extends React.Component {
                 <Route exact path="/" render={() => (
                     <div>
                         <p>我是主页</p>
-                        <Link to='/demo2/show'>hahhahhahha</Link>
+                        <Link to='/demo2/show'>show</Link>
+                        <br />
+                        <Link to='/demo/timer-view'>timer-view</Link>
+                        <br />
+                        <Link to='/map'>map</Link>
                         <DevTools />
                     </div>
                 )} />
                 {/* 一定不能使用 exact 属性，因为我们希望 /demo 匹配任何以 /demo 开头的路由， */}
                 <Route path='/demo' component={demo} />
                 <Route path='/demo2' component={demo2} />
+                <Route path='/map' component={map} />
 
                 <Redirect to="/" />
             </Switch>
