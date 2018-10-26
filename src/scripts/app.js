@@ -20,10 +20,10 @@ import '../styles/main.scss';
 
 
 ReactDOM.render(
-    <HashRouter>
+    <BrowserRouter>
         <Provider store = {store}>
             <AdminRouter />
         </Provider>
-    </HashRouter>,
+    </BrowserRouter>,
     document.getElementById('app')
 );

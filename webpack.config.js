@@ -19,7 +19,7 @@ module.exports = {
         port: 8000,
         inline: true,
         host:'0.0.0.0',
-        // historyApiFallback:true  //当路由使用 browserHistory 是设置此项为 true（解决直接跳转子路由返回 404 问题）
+        historyApiFallback:true  //当路由使用 browserHistory 是设置此项为 true（解决直接跳转子路由返回 404 问题）
     },
 
     module: {
